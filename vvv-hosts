@@ -1,1 +1,5 @@
-themereview.wordpress.dev
+# This file, and other files named vvv-hosts, will be automatically parsed for 
+# domains to add to both your host and  guest machines as the virtual machines 
+# boot.  These will be automatically parsed as long as they are located in 
+# subdirectories of the www/ directory.
+#themereview.wordpress.dev
