@@ -1,48 +1,29 @@
-# If we delete htdocs, let's just start over.
-if [ ! -d htdocs ]
-then
+# Install theme and plugins in default site.
+if [ -d /srv/www/wordpress-default ]; then
 
-	mkdir htdocs
-	cd htdocs
-
+	cd /srv/www/wordpress-default
+	
 	# **
-	# Database
+	# Get themes
 	# **
-
-	# Create the database over again.
-	mysql -u root --password=root -e "DROP DATABASE IF EXISTS wordpress_themereview"
-	mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS wordpress_themereview"
-	mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON wordpress_themereview.* TO wp@localhost IDENTIFIED BY 'wp';"
-
-	# **
-	# WordPress
-	# **
-
-	# Download WordPress
-	wp core download
-
-	# Install WordPress.
-	wp core config --dbname="wordpress_themereview" --dbuser=wp --dbpass=wp --dbhost="localhost" --extra-php <<PHP
-define( 'WP_DEBUG', true );
-define( 'SCRIPT_DEBUG', true );
-define( 'WP_DEBUG_LOG', true );
-PHP
-
-	# Install into DB
-	wp core install --url=themereview.wordpress.dev --title="A WordPress Theme Reviewers VVV" --admin_user=admin --admin_password=password --admin_email=changme@changeme.com
-
-	# **
-	# Your themes
-	# **
-	for i in `ls ../*.zip`
+	echo 'Enter econatstate OAUTH_TOKEN ...'
+	read OAUTH_TOKEN
+	echo 'Downloading econatstate ...'
+	curl -O -L -H "Authorization: token $OAUTH_TOKEN" https://github.com/kennyr87/econatstate/archive/master.zip
+	
+	for i in `ls ./*.zip`
 	do
 		wp theme install $i
 	done
-
+	
+	rm master.zip
+    echo 'Theme installed ...' 
+    
 	# **
 	# # Plugins
 	# **
-
+    echo 'Installing plugins ...'
+    	# TODO Add econatstate plugins
 	wp plugin install wordpress-importer --activate
 	wp plugin install developer --activate
 	wp plugin install theme-check --activate
@@ -83,7 +64,8 @@ PHP
 	cd ..
 
 else
-
+    
+    echo 'wordpress-default does not exist'
 	cd htdocs/
 
 	# Updates
