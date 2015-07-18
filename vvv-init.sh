@@ -23,8 +23,11 @@ if [ -d /srv/www/wordpress-default ]; then
 	# # Plugins
 	# **
     echo 'Installing plugins ...'
-    	# TODO Add econatstate plugins
-	wp plugin install wordpress-importer --activate
+    #econatstate plugins
+    wp plugin install advanced-custom-fields --activate
+    wp plugin install wp-likes --activate
+    #developer plugins
+    wp plugin install wordpress-importer --activate
 	wp plugin install developer --activate
 	wp plugin install theme-check --activate
 	wp plugin install theme-mentor --activate
