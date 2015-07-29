@@ -29,9 +29,7 @@ if [ -d /srv/www/wordpress-default ]; then
     wp plugin install the-events-calendar --activate
     #developer plugins
     wp plugin install wordpress-importer --activate
-	wp plugin install developer --activate
 	wp plugin install theme-check --activate
-	wp plugin install theme-mentor --activate
 	wp plugin install theme-checklist --activate
 	wp plugin install what-the-file --activate
 	wp plugin install vip-scanner --activate
