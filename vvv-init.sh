@@ -26,6 +26,7 @@ if [ -d /srv/www/wordpress-default ]; then
     #econatstate plugins
     wp plugin install advanced-custom-fields --activate
     wp plugin install wp-likes --activate
+    wp plugin install the-events-calendar --activate
     #developer plugins
     wp plugin install wordpress-importer --activate
 	wp plugin install developer --activate
