@@ -34,9 +34,6 @@ if [ -d /srv/www/wordpress-default ]; then
 	wp plugin install what-the-file --activate
 	wp plugin install vip-scanner --activate
 	wp plugin install wordpress-database-reset --activate
-	wp plugin install toolbar-theme-switcher --activate
-	wp plugin install rtl-tester
-	wp plugin install piglatin
 	wp plugin install debug-bar  --activate
 	wp plugin install debug-bar-console  --activate
 	wp plugin install debug-bar-cron  --activate
@@ -44,12 +41,9 @@ if [ -d /srv/www/wordpress-default ]; then
 	wp plugin install rewrite-rules-inspector  --activate
 	wp plugin install log-deprecated-notices  --activate
 	wp plugin install log-viewer  --activate
-	wp plugin install monster-widget  --activate
 	wp plugin install user-switching  --activate
 	wp plugin install regenerate-thumbnails  --activate
 	wp plugin install simply-show-ids  --activate
-	wp plugin install theme-test-drive  --activate
-	wp plugin install wordpress-beta-tester  --activate
 
 	# **
 	# Unit Data
