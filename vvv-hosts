@@ -2,4 +2,4 @@
 # domains to add to both your host and  guest machines as the virtual machines 
 # boot.  These will be automatically parsed as long as they are located in 
 # subdirectories of the www/ directory.
-#themereview.wordpress.dev
+# themereview.wordpress.dev
