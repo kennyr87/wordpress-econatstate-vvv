@@ -55,7 +55,7 @@ if [ -d /srv/www/wordpress-default ]; then
 	rm theme-unit-test-data.xml
 
 	# Replace url from unit data
-	wp search-replace 'wpthemetestdata.wordpress.com' 'themereview.wordpress.dev' --skip-columns=guid
+	wp search-replace 'wpthemetestdata.wordpress.com' 'local.wordpress.dev' --skip-columns=guid
 
 	cd ..
 
