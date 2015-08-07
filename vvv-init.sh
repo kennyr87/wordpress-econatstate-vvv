@@ -62,28 +62,5 @@ if [ -d /srv/www/wordpress-default ]; then
 else
     
     echo 'wordpress-default does not exist'
-	cd htdocs/
-
-	# Updates
-	if $(wp core is-installed); then
-
-		# Update WordPress.
-		wp core update
-		wp core update-db
-
-		# Update Plugins
-		wp plugin update --all
-
-		# **
-		# Your themes
-		# **
-		for i in `ls ../*.zip`
-		do
-			wp theme install $i
-		done
-
-	fi
-
-	cd ..
 
 fi
